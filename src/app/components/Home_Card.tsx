@@ -5,9 +5,16 @@ interface props {
   name: string;
 }
 const HomeCard: React.FC<props> = ({ image, name }: props) => {
+  const urlsMap = {
+    "Hardwood Flooring": "?hardWood=true",
+    "Carpet Flooring": "?carpet=true",
+    "Tile Flooring": "?tile=true",
+    Moulding: "",
+    "Laminate Flooring": "",
+  };
   return (
     <Link
-      href="/test"
+      href={`/test${urlsMap[name]}`}
       className="relative flex flex-col w-1/3 h-[calc(50vh)] mx-5 text-center pt-8 shadow-lg shadow-slate-950"
     >
       <span className="relative text-4xl font-semibold font-serif mb-9">
